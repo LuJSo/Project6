@@ -1,3 +1,5 @@
+var FoodX = Number(document.getElementById("Food").getAttribute("x"));
+var Foody = Number(document.getElementById("Food").getAttribute("y"));
 var CarnoX = Number(document.getElementById("Carno").getAttribute("x"));
 var CarnoY = Number(document.getElementById("Carno").getAttribute("y"));
 document.addEventListener("keydown", function(e) {
