@@ -2,6 +2,7 @@
 
 var playerX = 250;
 var playerY = 250;
+var foodEaten = 0;
 
 
 
@@ -30,9 +31,11 @@ if(e.keyCode == 37 || e.keyCode == 65){
   foodY = Number(document.getElementById("Food2").getAttribute("y"))
   foodX = Number(document.getElementById("Food2").getAttribute("x"))
 
-
-
-
+  if (playerX > foodX && playerX < foodX + 50 && playerY > foodY && playerY < foodY + 50) {
+      console.log("Food relocated")
+      document.getElementById("Food1").setAttribute("x",NumGen(75, 390));
+            document.getElementById("Food1").setAttribute("y",NumGen(75, 160));
+  }
 
   if (playerX > foodX && playerX < foodX + 50 && playerY > foodY && playerY < foodY + 50) {
       console.log("Food relocated")
@@ -43,6 +46,12 @@ if(e.keyCode == 37 || e.keyCode == 65){
   function NumGen(min, max) {
   return Math.floor(Math.random() * (max - min + 1) + min);
 }
+
+if(playerX > foodX && playerX < foodX + 50 && playerY > foodY && playerY < foodY + 50) {
+    foodEaten=foodEaten+1
+  document.getElementById("score").textContent = foodEaten;
+}
+
 
 
 
