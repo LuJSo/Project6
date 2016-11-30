@@ -1,7 +1,10 @@
-var FoodX = Number(document.getElementById("Food").getAttribute("x"));
-var Foody = Number(document.getElementById("Food").getAttribute("y"));
-var CarnoX = Number(document.getElementById("Carno").getAttribute("x"));
-var CarnoY = Number(document.getElementById("Carno").getAttribute("y"));
+
+
+var CarnoX = 250;
+var CarnoY = 250;
+
+
+
 document.addEventListener("keydown", function(e) {
 if(e.keyCode == 37 || e.keyCode == 65){
     CarnoX -=10;
@@ -19,4 +22,15 @@ if(e.keyCode == 37 || e.keyCode == 65){
    CarnoY -=10;
  document.getElementById("Carno").setAttribute("y", CarnoY)
 }
+
+
+foodY = Number(document.getElementById("Food").getAttribute("y"));
+foodX = Number(document.getElementById("Food").getAttribute("x"));
+
+if (CarnoX > foodX && CarnoX < foodX + 20 && CarnoY > foodY && CarnoY < foodY + 20) {
+console.log("Test")
+}
+
+
+
   })
