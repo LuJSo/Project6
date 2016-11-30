@@ -1,34 +1,47 @@
 
 
-var CarnoX = 250;
-var CarnoY = 250;
+var playerX = 250;
+var playerY = 250;
 
 
 
 document.addEventListener("keydown", function(e) {
 if(e.keyCode == 37 || e.keyCode == 65){
-    CarnoX -=10;
- document.getElementById("Carno").setAttribute("x", CarnoX)
+    playerX -=10;
+ document.getElementById("player").setAttribute("x", playerX)
   }
   else if(e.keyCode == 39|| e.keyCode == 68){
-    CarnoX +=10;
- document.getElementById("Carno").setAttribute("x", CarnoX)
+    playerX +=10;
+ document.getElementById("player").setAttribute("x", playerX)
   }
   if(e.keyCode == 40 || e.keyCode == 83){
-    CarnoY +=10;
- document.getElementById("Carno").setAttribute("y", CarnoY)
+    playerY +=10;
+ document.getElementById("player").setAttribute("y", playerY)
   }
   else if(e.keyCode == 38|| e.keyCode == 87){
-   CarnoY -=10;
- document.getElementById("Carno").setAttribute("y", CarnoY)
+   playerY -=10;
+ document.getElementById("player").setAttribute("y", playerY)
 }
 
 
-foodY = Number(document.getElementById("Food").getAttribute("y"));
-foodX = Number(document.getElementById("Food").getAttribute("x"));
+  foodY = Number(document.getElementById("Food1").getAttribute("y"))
+  foodX = Number(document.getElementById("Food1").getAttribute("x"))
 
-if (CarnoX > foodX && CarnoX < foodX + 20 && CarnoY > foodY && CarnoY < foodY + 20) {
-console.log("Test")
+  foodY = Number(document.getElementById("Food2").getAttribute("y"))
+  foodX = Number(document.getElementById("Food2").getAttribute("x"))
+
+
+
+
+
+  if (playerX > foodX && playerX < foodX + 50 && playerY > foodY && playerY < foodY + 50) {
+      console.log("Food relocated")
+      document.getElementById("Food2").setAttribute("x",NumGen(75, 390));
+            document.getElementById("Food2").setAttribute("y",NumGen(75, 160));
+  }
+
+  function NumGen(min, max) {
+  return Math.floor(Math.random() * (max - min + 1) + min);
 }
 
 
