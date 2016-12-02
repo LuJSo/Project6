@@ -3,6 +3,7 @@
 var playerX = 250;
 var playerY = 250;
 var foodEaten = 0;
+var timeStart = Date.now()
 
 
 
@@ -53,6 +54,12 @@ if(playerX > foodX && playerX < foodX + 50 && playerY > foodY && playerY < foodY
 }
 
 
+if(foodEaten == 5) {
+  document.getElementById("screen").pauseAnimation
+  var timeStop=Date.now()
+  var timeDuration = timeDuration/1000
+  document.getElementById("totaltime").textContent
+}
 
 
   })
