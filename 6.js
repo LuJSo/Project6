@@ -55,10 +55,9 @@ if(playerX > foodX && playerX < foodX + 50 && playerY > foodY && playerY < foodY
 
 
 if(foodEaten == 5) {
-  document.getElementById("screen").pauseAnimation
-  var timeStop=Date.now()
-  var timeDuration = timeDuration/1000
-  document.getElementById("totaltime").textContent
+    document.getElementById("canvas").pauseAnimations()
+    var timeStop = Date.now()
+    var duration = Math.round((timeStop - timeStart)/1000)+" seconds"
 }
 
 
